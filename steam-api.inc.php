@@ -29,6 +29,20 @@ class steamAPI {
 	}
 
 	/**
+		* getFriendsList
+		*
+		* Returns the friend list of any Steam user, provided his Steam Community profile visibility is set to "Public".
+		*
+		* @param string $steamID - 64 bit Steam ID to return friend list for
+		*
+		* @return json/bool - data if we have it, otherwise false
+		*
+		*/
+	public function getFriendsList($steamID, $relationship) {
+
+	}
+
+	/**
 		* makeCURLCall
 		*
 		* Makes the specified CURL request - this is the meat of the class!
