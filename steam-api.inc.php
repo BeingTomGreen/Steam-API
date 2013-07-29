@@ -10,6 +10,18 @@
 	*
 	*/
 class steamAPI {
+	// Holds the various parts of the API
+	private $protocol = 'http://';
+	private $host = 'api.steampowered.com/';
+
+	// Hold the API URL strings
+	private $apiURLs = [
+		'getFriendList' => 'ISteamUser/GetFriendList/v0001/?key=%s&steamid=%s&relationship=%s',
+	];
+
+	// Holds the built API URL
+	private $apiURL = null;
+
 	// Holds the API Key
 	private $apiKey = null;
 
@@ -26,6 +38,9 @@ class steamAPI {
 	{
 		// Save the API Key
 		$this->apiKey = $apiKey;
+
+		// Combine the protocol and host to build the API URL
+		$this->apiURL = $this->protocol . $this->host;
 	}
 
 	/**
@@ -40,7 +55,16 @@ class steamAPI {
 		*
 		*/
 	public function getFriendsList($steamID, $relationship) {
+		// Build the URL
+		$url = sprintf(
+			$this->apiURL . $this->apiURLs['getFriendList'],
+			$this->apiKey,
+			$steamID,
+			$relationship
+		);
 
+		// Grab and return the data..
+		return $this->makeCURLCall($url);
 	}
 
 	/**
@@ -85,19 +109,8 @@ class steamAPI {
 			// Decode the json response
 			$data = json_decode($data, true);
 
-			// Check we don't have an error code
-			if (isset($data['code']) and isset($data['reason']))
-			{
-				// API error - make a note of it and return false
-				error_log('API error: '. $data['code'] .' - '. $data['reason'] .' ('. $url .')!');
-				return false;
-			}
-			// No errors - cache and return the data
-			else
-			{
-				// Return the data
-				return $data;
-			}
+			// Return the data
+			return $data;
 		}
 		// CURL error - make a note of it and return false
 		else
