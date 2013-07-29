@@ -38,7 +38,7 @@ class steamAPI {
 		* @return json/bool - data if we have it, otherwise false
 		*
 		*/
-	public function makeCURLCall($url)
+	private function makeCURLCall($url)
 	{
 		// Initialise CURL
 		$handle = curl_init();
