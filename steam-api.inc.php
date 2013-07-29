@@ -1,11 +1,31 @@
 <?php
 
+/**
+	*
+	* @author Tom Green <tom@beingtomgreen.com>
+	* @link https://bitbucket.org/BeingTomGreen/steam-api
+	* @license UNLICENSE
+	*
+	* A simple PHP wrapper for the integrating the results from the Steam API into your applications.
+	*
+	*/
 class steamAPI {
+	// Holds the API Key
+	private $apiKey = null;
 
+	// This allows users to add additional CURL options
 	public $extraCURLOptions = null;
 
-	function __construct() {
-
+	/**
+		* __construct
+		*
+		* @param string $apiKey - Your API Key
+		*
+		*/
+	function __construct($apiKey)
+	{
+		// Save the API Key
+		$this->apiKey = $apiKey;
 	}
 
 	/**
