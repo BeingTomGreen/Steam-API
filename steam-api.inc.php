@@ -34,7 +34,7 @@ class steamAPI {
 		* Returns the friend list of any Steam user, provided their Steam Community profile visibility is set to "Public".
 		*
 		* @param string $steamID - 64 bit Steam ID to return friend list for
-		* @param string $relationship - Relationship filter. Possibles values: all, friend.
+		* @param string $relationship - Relationship filter. Possibles values: all, friend
 		*
 		* @return json/bool - data if we have it, otherwise false
 		*
