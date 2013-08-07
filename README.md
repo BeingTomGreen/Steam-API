@@ -1,11 +1,15 @@
 # Steam API Wrapper
 
-A simple PHP wrapper for the integrating the results from the Steam API into your applications.
+A simple PHP wrapper for the integrating the results from the Steam APIs into your applications.
 
 ## Currently Supported Methods
 
 ## TODO
 - Valiation functions (steamID etc)
+- Allow devs to specify the return format (json, xml, vdf)
+- Probably best to change the structure to have a class for each of the APIs (news, user, userStats and TF Items)
+- Add info about obtaining an API key
+- Add info about the Valve Brand/Links, possible build these via a support method?
 
 ## License
 This is free and unencumbered software released into the public domain. See UNLICENSE for more details.
