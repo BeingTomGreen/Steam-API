@@ -10,5 +10,5 @@ require 'key.inc.php';
 $api = new steamAPI(APIKEY);
 
 echo '<pre>';
-print_r($api->getFriendsList('76561197960435530', 'friend'));
+print_r($api->getFriendsList('76561198067518616', 'friend'));
 echo '</pre>';
