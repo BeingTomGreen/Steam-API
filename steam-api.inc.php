@@ -109,8 +109,12 @@ class steamAPI {
 		// Check our error code is 0 (0 means OK!)
 		if ($errorCode == 0)
 		{
-			// Decode the json response
-			$data = json_decode($data, true);
+			// Do we want the data returned as json
+			if ($this->format == 'json')
+			{
+				// Decode the json response
+				$data = json_decode($data, true);
+			}
 
 			// Return the data
 			return $data;
