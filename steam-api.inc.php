@@ -25,6 +25,9 @@ class steamAPI {
 	// Holds the API Key
 	private $apiKey = null;
 
+	// Holds the format we want to return the data in
+	public $format = 'json';
+
 	// This allows users to add additional CURL options
 	public $extraCURLOptions = null;
 
@@ -79,7 +82,7 @@ class steamAPI {
 		*/
 	private function makeCURLCall($url)
 	{
-		// Initialise CURL
+		// Initialize CURL
 		$handle = curl_init();
 
 		// Do we have any extra CURL options?
