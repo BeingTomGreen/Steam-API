@@ -37,10 +37,13 @@ class steamAPI {
 		* @param string $apiKey - Your API Key
 		*
 		*/
-	function __construct($apiKey)
+	function __construct($apiKey, $returnFormat)
 	{
 		// Save the API Key
 		$this->apiKey = $apiKey;
+
+		// Set the return format
+		$this->format = $format;
 
 		// Combine the protocol and host to build the API URL
 		$this->apiURL = $this->protocol . $this->host;
