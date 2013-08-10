@@ -37,13 +37,13 @@ class steamAPI {
 		* @param string $apiKey - Your API Key
 		*
 		*/
-	function __construct($apiKey, $returnFormat)
+	function __construct($apiKey, $returnFormat = 'json')
 	{
 		// Save the API Key
 		$this->apiKey = $apiKey;
 
 		// Set the return format
-		$this->format = $format;
+		$this->format = $returnFormat;
 
 		// Combine the protocol and host to build the API URL
 		$this->apiURL = $this->protocol . $this->host;
@@ -63,7 +63,7 @@ class steamAPI {
 	public function getFriendsList($steamID, $relationship) {
 		// Build the URL
 		$url = sprintf(
-			$this->apiURL . $this->apiURLs['getFriendList'],
+			$this->apiURL . $this->apiURLs['getFriendList'] . '&format=' . $this->format,
 			$this->apiKey,
 			$steamID,
 			$relationship
