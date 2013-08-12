@@ -1,6 +1,6 @@
 # Steam API Wrapper
 
-A simple PHP wrapper for the integrating the results from the Steam APIs into your applications.
+A simple PHP wrapper for the integrating the results from the Steam APIs into your application.
 
 ## Currently Supported Methods
 
