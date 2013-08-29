@@ -17,4 +17,4 @@ Returns the friend list of any Steam user, provided their Steam Community profil
 - Composer packageify & do the whole testing fun stoof
 
 ## License
-This is free and unencumbered software released into the public domain. See UNLICENSE for more details.
+This is open-sourced software licensed under the [MIT license](http://beingtomgreen.mit-license.org/).
